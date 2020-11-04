@@ -29,7 +29,7 @@ public class SwaggerConfig {
 
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder().title("Weather Forecast REST API Documentation")
-				.description("REST API developed in Java with Spring Boot in order to provide information on weather information from WeatherOpenMapAPI.")
+				.description("REST API developed in Java with Spring Boot in order to provide information on weather forecast from WeatherOpenMapAPI.")
 				.contact("arunkoolvenkat@gmail.com").licenseUrl("arunkoolvenkat@gmail.com").version("1.0").build();
 	}
 	
