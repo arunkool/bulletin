@@ -18,18 +18,13 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
 
-	@Bean
-	public Docket postsApi() {
-		return new Docket(DocumentationType.SWAGGER_2)
-				.select()
-				.apis(RequestHandlerSelectors.basePackage("com.bullentin.weatherApi"))
-				.paths(getPaths())
-				.build()
-				.apiInfo(apiInfo());
-	}
-
+    @Bean
+    public Docket postsApi() {
+        return new Docket(DocumentationType.SWAGGER_2).groupName("public-api")
+                .apiInfo(apiInfo()).select().paths(getPaths()).build();
+    }
 	private Predicate<String> getPaths() {
-		return regex("/forecast.*");
+		return regex("/weather.*");
 	}
 
 	private ApiInfo apiInfo() {
@@ -37,5 +32,5 @@ public class SwaggerConfig {
 				.description("REST API developed in Java with Spring Boot in order to provide information on weather information from WeatherOpenMapAPI.")
 				.contact("arunkoolvenkat@gmail.com").licenseUrl("arunkoolvenkat@gmail.com").version("1.0").build();
 	}
-
+	
 }
